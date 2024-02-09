@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <div id="maincontainer"></div>
+    <script>
+      document.body.onload = addElement;
+      const main = document.getElementById("maincontainer");
+      const header = document.head;
+
+      let w;
+      let enableUpdate = false;
+      let date;
+      let currentIndex = 0;
+
+      const datePattern = [
+        {
+          color: "white",
+          background: "blue",
+        },
+        {
+          color: "aquamarine",
+          background: "red",
+        },
+        {
+          color: "navy",
+          background: "orange",
+        },
+        {
+          color: "red",
+          background: "lawngreen",
+        },
+        {
+          color: "green",
+          background: "pink",
+        },
+        {
+          color: "black",
+          background: "aqua",
+        },
+      ];
+
+      const imgObjList = [
+        {
+          name: "Firework",
+          url: "https://images.prestigeonline.com/wp-content/uploads/sites/8/2023/12/27170414/Festive-Celebrations-at-The-Standard-Bangkok-Fireworks-1353x900.jpg",
+        },
+        {
+          name: "Crest",
+          url: "https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1500x1500/products/88361/91122/Harry-Potter-Gryffindor-Crest-Official-wall-mounted-cardboard-cutout-buy-now-at-star__95823.1507640354.jpg?c=2",
+        },
+        {
+          name: "Action",
+          url: "https://actionrecorder.com/actionlike2.png",
+        },
+        {
+          name: "Buffalo",
+          url: "https://static.invenglobal.com/upload/image/2017/09/03/i1504492059653782.png",
+        },
+      ];
+
+      const infoList = [
+        {
+          name: "nameText",
+          content: "Name: Kachen Thongsawatwong, ID: 65010100",
+        },
+        {
+          name: "subjectText",
+          content: "Subject: WEB APPLICATION DEVELOPMENT",
+        },
+        { name: "semesterText", content: "Semester: 2" },
+      ];
+
+      function addElement() {
+        const pageTitle = document.createElement("title");
+        pageTitle.innerHTML = "Exercise04";
+        header.appendChild(pageTitle);
+
+        const exerciseHeader = document.createElement("h2");
+        exerciseHeader.innerHTML = "Exercise 04: Javascript&DOM";
+
+        const dateDisplay = document.createElement("button");
+        dateDisplay.style.position = "absolute";
+        dateDisplay.style.top = "0";
+        dateDisplay.style.right = "0";
+        dateDisplay.style.visibility = "hidden";
+
+        dateDisplay.addEventListener("click", () => {
+          toggleUpdate(dateDisplay, dateButton);
+          // dateButton.style.visibility = "visible";
+          // dateDisplay.style.visibility = "hidden";
+          w.postMessage({ statusEnable: false });
+
+          dateButton.style.color = datePattern[currentIndex].color;
+          dateButton.style.backgroundColor =
+            datePattern[currentIndex].background;
+
+          dateButton.innerHTML = date;
+        });
+
+        const dateButton = document.createElement("button");
+        dateButton.innerHTML = "Click me to display Date and Time";
+        dateButton.setAttribute("type", "button");
+        dateButton.style.display = "block";
+        dateButton.style.marginBottom = "20px";
+
+        dateButton.addEventListener("click", () => {
+          if (typeof w == "undefined") {
+            w = new Worker("workers1.js");
+
+            w.onmessage = function (event) {
+              date = event.data.date;
+              isClick = event.data.isClick;
+
+              dateDisplay.innerHTML = date;
+
+              if (enableUpdate && !isClick) {
+                currentIndex++;
+                if (currentIndex > 5) {
+                  currentIndex = 0;
+                }
+
+                dateDisplay.style.color = datePattern[currentIndex].color;
+                dateDisplay.style.backgroundColor =
+                  datePattern[currentIndex].background;
+              }
+            };
+          }
+
+          toggleUpdate(dateDisplay, dateButton);
+          // dateButton.style.visibility = "hidden";
+          // dateDisplay.style.visibility = "visible";
+
+          w.postMessage({ statusEnable: true });
+
+          dateDisplay.style.color = datePattern[currentIndex].color;
+          dateDisplay.style.backgroundColor =
+            datePattern[currentIndex].background;
+
+          dateDisplay.innerHTML = date;
+        });
+
+        const infoLink = document.createElement("a");
+        infoLink.setAttribute("href", "#");
+        infoLink.innerHTML = "Personal Info";
+        infoLink.setAttribute("onclick", "return false;");
+        infoLink.style.color = "orchid";
+
+        infoLink.addEventListener("mouseover", (event) => {
+          event.target.style.color = "blue";
+          event.target.style.background = "yellow";
+        });
+
+        infoLink.addEventListener("mouseleave", (event) => {
+          event.target.style.color = "orchid";
+          event.target.style.background = "white";
+        });
+
+        infoLink.addEventListener("click", () => {
+          if (infoContainer.style.display == "block") {
+            infoContainer.style.display = "none";
+          } else {
+            infoContainer.style.display = "block";
+          }
+        });
+
+        const infoContainer = document.createElement("ul");
+        infoContainer.style.display = "none";
+
+        infoList.forEach((item) => {
+          const listItem = document.createElement("li");
+          listItem.setAttribute("id", item.name);
+          listItem.innerHTML = item.content;
+
+          infoContainer.appendChild(listItem);
+        });
+
+        const snapshotsHeader = document.createElement("h1");
+        snapshotsHeader.innerHTML = "Snapshots";
+
+        const photosList = document.createElement("ul");
+
+        imgObjList.map((item) => {
+          const listItem = document.createElement("li");
+          listItem.setAttribute("id", item.name);
+
+          const innerLink = document.createElement("a");
+          innerLink.setAttribute("href", item.url);
+          innerLink.setAttribute("onclick", "return false;");
+          innerLink.style.color = "blue";
+          innerLink.innerHTML = item.name;
+
+          innerLink.addEventListener("click", () => {
+            photoContainer.setAttribute("src", item.url);
+          });
+
+          listItem.appendChild(innerLink);
+          photosList.appendChild(listItem);
+        });
+
+        const photoContainer = document.createElement("img");
+        photoContainer.setAttribute(
+          "src",
+          "https://scontent.fbkk5-3.fna.fbcdn.net/v/t1.6435-9/67377935_2315594491862591_6535731302887325696_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=9a8829&_nc_eui2=AeG5jJ8heqb3uz1iaa5qEpAUzbIGYW4JVw_NsgZhbglXD-yqJRcGMPoxsCwiAVhOz5fU6wJNLGwutR-D3VWFOZfE&_nc_ohc=dN9GKj0T_34AX9v-KZN&_nc_ht=scontent.fbkk5-3.fna&oh=00_AfBvBA8FSyMVtLNyd3LDss5aM6SaMLQKM4ejRntMLPci2A&oe=65ED32AD"
+        );
+        photoContainer.setAttribute("alt", "kmitl_footer");
+        photoContainer.style.width = "720px";
+
+        const components = [
+          exerciseHeader,
+          dateDisplay,
+          dateButton,
+          infoLink,
+          infoContainer,
+          snapshotsHeader,
+          photosList,
+          photoContainer,
+        ];
+
+        components.map((item) => {
+          main.appendChild(item);
+        });
+      }
+
+      function toggleUpdate(dateDisplay, dateButton) {
+        enableUpdate = !enableUpdate;
+        [dateButton.style.visibility, dateDisplay.style.visibility] = [
+          dateDisplay.style.visibility,
+          dateButton.style.visibility,
+        ];
+      }
+    </script>
+  </body>
+</html>
