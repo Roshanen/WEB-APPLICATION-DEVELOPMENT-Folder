@@ -89,6 +89,7 @@
           toggleUpdate(dateDisplay, dateButton);
           // dateButton.style.visibility = "visible";
           // dateDisplay.style.visibility = "hidden";
+          w.postMessage({ statusEnable: false });
 
           dateButton.style.color = datePattern[currentIndex].color;
           dateButton.style.backgroundColor =
@@ -109,11 +110,15 @@
 
             w.onmessage = function (event) {
               date = event.data.date;
+              isClick = event.data.isClick;
 
               dateDisplay.innerHTML = date;
 
-              if (enableUpdate) {
-                currentIndex = event.data.index;
+              if (enableUpdate && !isClick) {
+                currentIndex++;
+                if (currentIndex > 5) {
+                  currentIndex = 0;
+                }
 
                 dateDisplay.style.color = datePattern[currentIndex].color;
                 dateDisplay.style.backgroundColor =
@@ -126,7 +131,7 @@
           // dateButton.style.visibility = "hidden";
           // dateDisplay.style.visibility = "visible";
 
-          w.postMessage({ index: currentIndex });
+          w.postMessage({ statusEnable: true });
 
           dateDisplay.style.color = datePattern[currentIndex].color;
           dateDisplay.style.backgroundColor =

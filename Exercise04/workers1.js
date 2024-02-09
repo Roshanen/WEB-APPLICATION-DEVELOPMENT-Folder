@@ -1,19 +1,21 @@
-let currentIndex = 0;
+let statusEnable = false;
 
-function updateTime() {
-  self.postMessage({date: new Date(), index: currentIndex});
+function updateTime(isClick) {
+  self.postMessage({ date: new Date(), isClick: isClick });
 }
 
 self.addEventListener("message", (event) => {
-  currentIndex = event.data.index;
-})
+  statusEnable = event.data.statusEnable;
+
+  if (statusEnable) {
+    updateTime(true);
+  }
+});
 
 setInterval(() => {
-  currentIndex++;
-  if (currentIndex > 5){
-    currentIndex = 0;
+  if (statusEnable) {
+    updateTime(false);
   }
-  updateTime();
 }, 1000);
 
-updateTime();
+updateTime(false);
