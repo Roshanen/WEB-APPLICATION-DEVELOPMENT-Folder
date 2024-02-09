@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      :root {
+        --white-color: #dee2e6;
+        --black-color: #1e2125;
+        --dark-blue-color: #202049;
+        --dark-purple-color: #7328a8;
+        --light-purple-color: #8e36cd;
+        --card-color: #2b3035;
+        --linear-bg-color: linear-gradient(
+          94deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(20, 20, 73, 1) 50%,
+          rgba(2, 0, 36, 1) 100%
+        );
+      }
+      body {
+        padding-top: 50px;
+        background: var(--linear-bg-color);
+        color: var(--white-color);
+      }
+      h1 {
+        width: fit-content;
+        border-bottom: 2px solid var(--white-color);
+      }
+      .card {
+        background-color: var(--card-color);
+        color: var(--white-color);
+      }
+      :is(.nav-link, .navbar-brand):hover {
+        text-shadow: 0 0 3px var(--light-purple-color);
+      }
+      .scrolled-down {
+        transform: translateY(-100%);
+        transition: all 0.3s ease-in-out;
+      }
+      .scrolled-up {
+        transform: translateY(0);
+        transition: all 0.3s ease-in-out;
+      }
+      ::-webkit-scrollbar {
+        width: auto;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: var(--black-color);
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--dark-purple-color);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--light-purple-color);
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="autohide navbar navbar-expand-sm navbar-dark bg-dark fixed-top"
+      id="navbar"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active home-link" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link First" href="#First">One</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link Second" href="#Second">Two</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link Third" href="#Third">Three</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link Fourth" href="#Fourth">Four</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link Fifth" href="#Fifth">Five</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link Sixth" href="#Sixth">Six</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link Seventh" href="#Seventh">Seven</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link Eighth" href="#Eighth">Eight</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main
+      role="main"
+      class="container main-page"
+      data-bs-spy="scroll"
+      data-bs-target="#navbar"
+    >
+      <div class="container section card mb-3 shadow" id="First">
+        <div class="card-body">
+          <h1>First</h1>
+          <img
+            class="img-fluid img-thumbnail d-block mx-auto my-3"
+            src="https://p325k7wa.twic.pics/high/jojo/jojo-bizarre-adventure-all-star-battle-r/02-news/JOJOASBR_launchTrailer_thumbnail.jpg?twic=v1/resize=760/step=10/quality=80"
+            alt="jojo1"
+          />
+          <p>
+            &emsp;Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Aperiam reprehenderit velit rem quam deleniti! Libero blanditiis ab
+            veniam dignissimos iste. Eaque temporibus possimus autem est beatae
+            debitis blanditiis labore molestias! Quis similique fugiat modi
+            enim. Quis corporis odio excepturi, fugiat autem quos reprehenderit
+            nisi veniam voluptates eum similique quod exercitationem labore,
+            ducimus, repellat consequatur tempore iure sunt velit. Officiis, in!
+            Reiciendis vel doloremque aspernatur tempore quod delectus voluptas
+            mollitia. Eaque magni recusandae odio! Iusto excepturi consequuntur
+            veritatis nihil, corrupti maiores doloremque totam distinctio iste
+            nobis repellat minima voluptates a tempora. Ratione molestias
+            suscipit ducimus officiis magnam tempora, fuga quasi nesciunt
+            corporis, iusto itaque! Natus consequuntur, aperiam consequatur odio
+            cupiditate commodi voluptas nam? Inventore laborum eligendi earum
+            quam amet, pariatur voluptatibus! Quae nihil sint temporibus quidem!
+            Ut sit officiis iste magnam! Nihil voluptates aspernatur deleniti,
+            quaerat numquam exercitationem sequi obcaecati culpa nemo recusandae
+            quibusdam ipsam temporibus nobis quos perferendis modi beatae!
+          </p>
+        </div>
+      </div>
+      <div class="container section card mb-3 shadow" id="Second">
+        <div class="card-body">
+          <h1>Second</h1>
+          <img
+            class="img-fluid img-thumbnail d-block mx-auto my-3"
+            src="https://jojo-portal.com/wp-content/uploads/2020/10/img_joestar_radio_thum.jpg"
+            alt="jojo2"
+          />
+          <p>
+            &emsp;Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Aperiam reprehenderit velit rem quam deleniti! Libero blanditiis ab
+            veniam dignissimos iste. Eaque temporibus possimus autem est beatae
+            debitis blanditiis labore molestias! Quis similique fugiat modi
+            enim. Quis corporis odio excepturi, fugiat autem quos reprehenderit
+            nisi veniam voluptates eum similique quod exercitationem labore,
+            ducimus, repellat consequatur tempore iure sunt velit. Officiis, in!
+            Reiciendis vel doloremque aspernatur tempore quod delectus voluptas
+            mollitia. Eaque magni recusandae odio! Iusto excepturi consequuntur
+            veritatis nihil, corrupti maiores doloremque totam distinctio iste
+            nobis repellat minima voluptates a tempora. Ratione molestias
+            suscipit ducimus officiis magnam tempora, fuga quasi nesciunt
+            corporis, iusto itaque! Natus consequuntur, aperiam consequatur odio
+            cupiditate commodi voluptas nam? Inventore laborum eligendi earum
+            quam amet, pariatur voluptatibus! Quae nihil sint temporibus quidem!
+            Ut sit officiis iste magnam! Nihil voluptates aspernatur deleniti,
+            quaerat numquam exercitationem sequi obcaecati culpa nemo recusandae
+            quibusdam ipsam temporibus nobis quos perferendis modi beatae!
+          </p>
+        </div>
+      </div>
+      <div class="container section card mb-3 shadow" id="Third">
+        <div class="card-body">
+          <h1>Third</h1>
+          <img
+            class="img-fluid img-thumbnail d-block mx-auto my-3"
+            src="https://m.media-amazon.com/images/I/81gi-nwWZeS._AC_UF894,1000_QL80_.jpg"
+            alt="jojo3"
+          />
+          <p>
+            &emsp;Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Aperiam reprehenderit velit rem quam deleniti! Libero blanditiis ab
+            veniam dignissimos iste. Eaque temporibus possimus autem est beatae
+            debitis blanditiis labore molestias! Quis similique fugiat modi
+            enim. Quis corporis odio excepturi, fugiat autem quos reprehenderit
+            nisi veniam voluptates eum similique quod exercitationem labore,
+            ducimus, repellat consequatur tempore iure sunt velit. Officiis, in!
+            Reiciendis vel doloremque aspernatur tempore quod delectus voluptas
+            mollitia. Eaque magni recusandae odio! Iusto excepturi consequuntur
+            veritatis nihil, corrupti maiores doloremque totam distinctio iste
+            nobis repellat minima voluptates a tempora. Ratione molestias
+            suscipit ducimus officiis magnam tempora, fuga quasi nesciunt
+            corporis, iusto itaque! Natus consequuntur, aperiam consequatur odio
+            cupiditate commodi voluptas nam? Inventore laborum eligendi earum
+            quam amet, pariatur voluptatibus! Quae nihil sint temporibus quidem!
+            Ut sit officiis iste magnam! Nihil voluptates aspernatur deleniti,
+            quaerat numquam exercitationem sequi obcaecati culpa nemo recusandae
+            quibusdam ipsam temporibus nobis quos perferendis modi beatae!
+          </p>
+        </div>
+      </div>
+      <div class="container section card mb-3 shadow" id="Fourth">
+        <div class="card-body">
+          <h1>Fourth</h1>
+          <img
+            class="img-fluid img-thumbnail d-block mx-auto my-3"
+            src="https://preview.redd.it/kc7hbvo87ir81.jpg?auto=webp&s=235d4f799f4367a07fe97eccfba49ea38a25edf6"
+            alt="jojo4"
+          />
+          <p>
+            &emsp;Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Aperiam reprehenderit velit rem quam deleniti! Libero blanditiis ab
+            veniam dignissimos iste. Eaque temporibus possimus autem est beatae
+            debitis blanditiis labore molestias! Quis similique fugiat modi
+            enim. Quis corporis odio excepturi, fugiat autem quos reprehenderit
+            nisi veniam voluptates eum similique quod exercitationem labore,
+            ducimus, repellat consequatur tempore iure sunt velit. Officiis, in!
+            Reiciendis vel doloremque aspernatur tempore quod delectus voluptas
+            mollitia. Eaque magni recusandae odio! Iusto excepturi consequuntur
+            veritatis nihil, corrupti maiores doloremque totam distinctio iste
+            nobis repellat minima voluptates a tempora. Ratione molestias
+            suscipit ducimus officiis magnam tempora, fuga quasi nesciunt
+            corporis, iusto itaque! Natus consequuntur, aperiam consequatur odio
+            cupiditate commodi voluptas nam? Inventore laborum eligendi earum
+            quam amet, pariatur voluptatibus! Quae nihil sint temporibus quidem!
+            Ut sit officiis iste magnam! Nihil voluptates aspernatur deleniti,
+            quaerat numquam exercitationem sequi obcaecati culpa nemo recusandae
+            quibusdam ipsam temporibus nobis quos perferendis modi beatae!
+          </p>
+        </div>
+      </div>
+      <div class="container section card mb-3 shadow" id="Fifth">
+        <div class="card-body">
+          <h1>Fifth</h1>
+          <img
+            class="img-fluid img-thumbnail d-block mx-auto my-3"
+            src="https://p325k7wa.twic.pics/2022-06/jojo_EAD_news.jpg?twic=v1/resize=760/step=10/quality=80"
+            alt="jojo5"
+          />
+          <p>
+            &emsp;Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Aperiam reprehenderit velit rem quam deleniti! Libero blanditiis ab
+            veniam dignissimos iste. Eaque temporibus possimus autem est beatae
+            debitis blanditiis labore molestias! Quis similique fugiat modi
+            enim. Quis corporis odio excepturi, fugiat autem quos reprehenderit
+            nisi veniam voluptates eum similique quod exercitationem labore,
+            ducimus, repellat consequatur tempore iure sunt velit. Officiis, in!
+            Reiciendis vel doloremque aspernatur tempore quod delectus voluptas
+            mollitia. Eaque magni recusandae odio! Iusto excepturi consequuntur
+            veritatis nihil, corrupti maiores doloremque totam distinctio iste
+            nobis repellat minima voluptates a tempora. Ratione molestias
+            suscipit ducimus officiis magnam tempora, fuga quasi nesciunt
+            corporis, iusto itaque! Natus consequuntur, aperiam consequatur odio
+            cupiditate commodi voluptas nam? Inventore laborum eligendi earum
+            quam amet, pariatur voluptatibus! Quae nihil sint temporibus quidem!
+            Ut sit officiis iste magnam! Nihil voluptates aspernatur deleniti,
+            quaerat numquam exercitationem sequi obcaecati culpa nemo recusandae
+            quibusdam ipsam temporibus nobis quos perferendis modi beatae!
+          </p>
+        </div>
+      </div>
+      <div class="container section card mb-3 shadow" id="Sixth">
+        <div class="card-body">
+          <h1>Sixth</h1>
+          <img
+            class="img-fluid img-thumbnail d-block mx-auto my-3"
+            src="https://miro.medium.com/v2/resize:fit:2800/1*ZmpgStvNsZXnyUfMGDVj2Q.jpeg"
+            alt="jojo6"
+          />
+          <p>
+            &emsp;Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Aperiam reprehenderit velit rem quam deleniti! Libero blanditiis ab
+            veniam dignissimos iste. Eaque temporibus possimus autem est beatae
+            debitis blanditiis labore molestias! Quis similique fugiat modi
+            enim. Quis corporis odio excepturi, fugiat autem quos reprehenderit
+            nisi veniam voluptates eum similique quod exercitationem labore,
+            ducimus, repellat consequatur tempore iure sunt velit. Officiis, in!
+            Reiciendis vel doloremque aspernatur tempore quod delectus voluptas
+            mollitia. Eaque magni recusandae odio! Iusto excepturi consequuntur
+            veritatis nihil, corrupti maiores doloremque totam distinctio iste
+            nobis repellat minima voluptates a tempora. Ratione molestias
+            suscipit ducimus officiis magnam tempora, fuga quasi nesciunt
+            corporis, iusto itaque! Natus consequuntur, aperiam consequatur odio
+            cupiditate commodi voluptas nam? Inventore laborum eligendi earum
+            quam amet, pariatur voluptatibus! Quae nihil sint temporibus quidem!
+            Ut sit officiis iste magnam! Nihil voluptates aspernatur deleniti,
+            quaerat numquam exercitationem sequi obcaecati culpa nemo recusandae
+            quibusdam ipsam temporibus nobis quos perferendis modi beatae!
+          </p>
+        </div>
+      </div>
+      <div class="container section card mb-3 shadow" id="Seventh">
+        <div class="card-body">
+          <h1>Seventh</h1>
+          <img
+            class="img-fluid img-thumbnail d-block mx-auto my-3"
+            src="https://i.ytimg.com/vi/1MpQOBopPMc/maxresdefault.jpg"
+            alt="jojo7"
+          />
+          <p>
+            &emsp;Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Aperiam reprehenderit velit rem quam deleniti! Libero blanditiis ab
+            veniam dignissimos iste. Eaque temporibus possimus autem est beatae
+            debitis blanditiis labore molestias! Quis similique fugiat modi
+            enim. Quis corporis odio excepturi, fugiat autem quos reprehenderit
+            nisi veniam voluptates eum similique quod exercitationem labore,
+            ducimus, repellat consequatur tempore iure sunt velit. Officiis, in!
+            Reiciendis vel doloremque aspernatur tempore quod delectus voluptas
+            mollitia. Eaque magni recusandae odio! Iusto excepturi consequuntur
+            veritatis nihil, corrupti maiores doloremque totam distinctio iste
+            nobis repellat minima voluptates a tempora. Ratione molestias
+            suscipit ducimus officiis magnam tempora, fuga quasi nesciunt
+            corporis, iusto itaque! Natus consequuntur, aperiam consequatur odio
+            cupiditate commodi voluptas nam? Inventore laborum eligendi earum
+            quam amet, pariatur voluptatibus! Quae nihil sint temporibus quidem!
+            Ut sit officiis iste magnam! Nihil voluptates aspernatur deleniti,
+            quaerat numquam exercitationem sequi obcaecati culpa nemo recusandae
+            quibusdam ipsam temporibus nobis quos perferendis modi beatae!
+          </p>
+        </div>
+      </div>
+      <div class="container section card mb-3 shadow" id="Eighth">
+        <div class="card-body">
+          <h1>Eighth</h1>
+          <img
+            class="img-fluid img-thumbnail d-block mx-auto my-3"
+            src="https://fictionhorizon.com/wp-content/uploads/2023/10/jojos-bizarre-adventures-watch-order.jpg"
+            alt="jojo8"
+          />
+          <p>
+            &emsp;Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Aperiam reprehenderit velit rem quam deleniti! Libero blanditiis ab
+            veniam dignissimos iste. Eaque temporibus possimus autem est beatae
+            debitis blanditiis labore molestias! Quis similique fugiat modi
+            enim. Quis corporis odio excepturi, fugiat autem quos reprehenderit
+            nisi veniam voluptates eum similique quod exercitationem labore,
+            ducimus, repellat consequatur tempore iure sunt velit. Officiis, in!
+            Reiciendis vel doloremque aspernatur tempore quod delectus voluptas
+            mollitia. Eaque magni recusandae odio! Iusto excepturi consequuntur
+            veritatis nihil, corrupti maiores doloremque totam distinctio iste
+            nobis repellat minima voluptates a tempora. Ratione molestias
+            suscipit ducimus officiis magnam tempora, fuga quasi nesciunt
+            corporis, iusto itaque! Natus consequuntur, aperiam consequatur odio
+            cupiditate commodi voluptas nam? Inventore laborum eligendi earum
+            quam amet, pariatur voluptatibus! Quae nihil sint temporibus quidem!
+            Ut sit officiis iste magnam! Nihil voluptates aspernatur deleniti,
+            quaerat numquam exercitationem sequi obcaecati culpa nemo recusandae
+            quibusdam ipsam temporibus nobis quos perferendis modi beatae!
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="container d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0">© 2077 Fried Chicken, Inc</span>
+      </div>
+    </footer>
+
+    <!-- # autohide navbar script -->
+    <script>
+      el_autohide = document.querySelector(".autohide");
+
+      navbar_height = document.querySelector(".navbar").offsetHeight;
+      document.body.style.paddingTop = navbar_height + "px";
+
+      if (el_autohide) {
+        var last_scroll_top = 0;
+        window.addEventListener("scroll", function () {
+          let scroll_top = window.scrollY;
+          if (scroll_top < last_scroll_top) {
+            el_autohide.classList.remove("scrolled-down");
+            el_autohide.classList.add("scrolled-up");
+          } else {
+            el_autohide.classList.remove("scrolled-up");
+            el_autohide.classList.add("scrolled-down");
+          }
+          last_scroll_top = scroll_top;
+        });
+      }
+    </script>
+
+    <!-- # boostrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      }
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+      });
+    ></script>
+  </body>
+</html>
